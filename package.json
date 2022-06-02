@@ -1,0 +1,21 @@
+{
+  "name": "kminoserver",
+  "version": "1.0.0",
+  "description": "Servidor de kmino basado en node js, express y socketio",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vezack",
+  "license": "MIT",
+  "dependencies": {
+    "argon2": "^0.28.5",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
