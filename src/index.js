@@ -29,6 +29,23 @@ app.get('/route/:id', function (req, res, next) {
    res.send(route_id)
 })
 
+app.get('/routes', function (req,res,next){
+   mysqlConnection.query('SELECT id,name FROM rutas', async (err,rows,fields) => {
+      let rutas = [];
+      if(!err){
+         for (let index = 0; index < rows.length; index++) {
+            rutas.push(rows[index])
+         }
+         res.json({rutas})
+      }else{
+         res.json({
+            status: 'Error',
+            msg: 'Chale, algo salió mal'
+         })
+      }
+   });
+});
+
 app.post('/login', function (req, res, next) {
    if (req.body.email === 'undefined' || req.body.password === 'undefined') {
       res.json({
